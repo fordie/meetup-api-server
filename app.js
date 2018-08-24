@@ -6,7 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var express = require('express');
-
+var sassMiddleware = require('node-sass-middleware')
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
@@ -22,12 +22,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(sassMiddleware({
-//   src: path.join(__dirname, 'public'),
-//   dest: path.join(__dirname, 'public'),
-//   indentedSyntax: true, // true = .sass and false = .scss
-//   sourceMap: true
-// }));
+app.use(sassMiddleware({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  indentedSyntax: false, // true = .sass and false = .scss
+  sourceMap: true
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 nunjucks.configure('views', {
