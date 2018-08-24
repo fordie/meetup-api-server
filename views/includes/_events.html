@@ -1,5 +1,10 @@
 {% for event in events%}
-	<h2>{{event.name}}</h2>
-	{{event.venue.name}}, {{event.venue.address_1}}
-	{{event.time}}
+	{#% if event.announced %#}
+	<div>
+		
+		<h2>{{event.name}}</h2>
+		{{event.venue.name}}, {{event.venue.address_1}}
+		{{event.time}}
+	</div>
+	{#% endif %#}
 {% endfor %}

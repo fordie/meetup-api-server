@@ -5,3 +5,10 @@ body {
 
 a {
   color: #00B7FF; }
+
+main {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 3fr 3fr 3fr; }
+  main h1 {
+    grid-column: span 3; }
