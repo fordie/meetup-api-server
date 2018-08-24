@@ -1,24 +1,42 @@
 var express = require('express');
+var nunjucks = require('nunjucks')
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var hbs = require('express-hbs');
+var express = require('express');
 
 require('dotenv').config();
 
-var routes = require('./routes/index');
+var indexRouter = require('./routes/index');
+//var usersRouter = require('./routes/users');
 
 var app = express();
 
 // view engine setup
-app.engine('hbs', hbs.express4({
-  defaultLayout: __dirname + '/views/layout/default.hbs',
-  layoutsDir: __dirname + '/views/layout'
-}));
-app.set('view engine', 'hbs');
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+// app.use(sassMiddleware({
+//   src: path.join(__dirname, 'public'),
+//   dest: path.join(__dirname, 'public'),
+//   indentedSyntax: true, // true = .sass and false = .scss
+//   sourceMap: true
+// }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+nunjucks.configure('views', {
+  autoescape: true,
+  express   : app
+});
+
+app.use('/', indexRouter);
+//app.use('/users', usersRouter);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -28,7 +46,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
