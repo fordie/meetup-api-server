@@ -10,7 +10,20 @@ var sassMiddleware = require('node-sass-middleware')
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
-//var usersRouter = require('./routes/users');
+
+
+// Import the plugin
+var nunjucksDate = require('nunjucks-date');
+ 
+// Define a custom default date format. Any valid format works.
+// The date format defaults to "YYYY"
+// http://momentjs.com/docs/#/displaying/format/
+nunjucksDate.setDefaultFormat('MMMM Do YYYY, h:mm:ss a');
+ 
+// Initialize your Nunjucks enironment
+var env = new nunjucks.Environment();
+nunjucksDate.install(env);
+
 
 var app = express();
 
@@ -55,6 +68,8 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+
+env.express(app);
 
 // development error handler
 // will print stacktrace

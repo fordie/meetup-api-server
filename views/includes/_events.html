@@ -3,8 +3,8 @@
 	<div>
 		
 		<h2>{{event.name}}</h2>
-		{{event.venue.name}}, {{event.venue.address_1}}
-		{{event.time}}
+		<p>{{event.venue.name}}, {{event.venue.address_1}}</p>
+		<p>{{event.time | date }}</p>
 	</div>
 	{#% endif %#}
 {% endfor %}
