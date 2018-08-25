@@ -1,14 +1,81 @@
 body {
   padding: 50px;
   background: white;
+  color: #333;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
 
-main {
+#contents {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 3fr 3fr 3fr; }
-  main h1 {
-    grid-column: span 3; }
+  grid-template-columns: 8fr 2fr; }
+  #contents main {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 3fr 3fr 3fr; }
+    #contents main header {
+      grid-column: span 2; }
+    #contents main h2 {
+      grid-column: span 2; }
+    #contents main .tweet {
+      border: 1px solid #efefef;
+      padding: 20px; }
+    #contents main .event a {
+      color: #333;
+      text-decoration: none; }
+      #contents main .event a h2 {
+        transition: color 1s ease; }
+      #contents main .event a .description {
+        display: none; }
+      #contents main .event a:hover h2 {
+        transition: color 1s ease;
+        color: #f13a59; }
+      #contents main .event a:hover p {
+        text-decoration: underline; }
+    #contents main .event:first-of-type {
+      grid-column: span 2;
+      grid-row: span 2;
+      background-color: #efefef;
+      border: 1px solid #ccc;
+      padding: 20px; }
+      #contents main .event:first-of-type .description {
+        display: block; }
+  #contents aside {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: 300px; }
+    #contents aside div a {
+      display: block;
+      height: 100%;
+      text-align: center;
+      align-self: center;
+      border: 1px solid  #efefef;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold; }
+      #contents aside div a .link-log0 {
+        transition-duration: 1s; }
+      #contents aside div a:hover {
+        text-decoration: underline; }
+        #contents aside div a:hover .link-logo {
+          transform: rotate(-5deg); }
+
+.meetupLink {
+  background-color: #f13a59;
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  align-self: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1.2em;
+  align-items: center; }
+  .meetupLink:hover {
+    background-color: #e81035; }
+
+footer {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  line-height: 3; }

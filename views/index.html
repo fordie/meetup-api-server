@@ -1,10 +1,28 @@
 {% extends 'layout/default.html' %}
 {% block content %}
-<main>
-	<h1>{{group.name}} Events</h1>
-	{% include 'includes/_events.html'%}
-	{% include 'includes/_twitter.html'%}
-</main>
-
-
-{% endblock %}
+	<header>
+		<img src="{{ group.group_photo.highres_link}}" alt="WorthingDigital Logo">
+	</header>
+	<!--<img src="{{ group.key_photo.photo_link}}" alt="">-->
+	<div id="contents">
+		<main>
+			<header id="header" class="">
+				<h1>{{ group.name }}</h1>
+				
+				{{group.description | safe }}
+				</header><!-- /header -->
+				
+				
+				
+				{% include 'includes/_events.html'%}
+			</main>
+			<aside>
+				{% include 'includes/_slack.html'%}
+				{% include 'includes/_twitter.html'%}
+				{% include 'includes/_facebook.html'%}
+			</aside>
+		</div>
+		<footer>
+			&copy; 2018 WorthingDigital
+		</footer>
+	{% endblock %}
