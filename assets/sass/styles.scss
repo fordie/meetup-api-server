@@ -16,6 +16,9 @@ body {
 
 a {
   color: #00B7FF;
+  &:focus{
+				outline: $worthingdigital-color auto 5px;
+			}
 }
 h1, h2, h3, h4{
 	font-family: $heading-font
@@ -115,6 +118,9 @@ h1, h2, h3, h4{
 			&:hover{
 				cursor: pointer;
 			}
+			&:focus{
+				outline: $worthingdigital-color auto 5px;
+			}
 		}
 	}
 	aside{
@@ -142,7 +148,7 @@ h1, h2, h3, h4{
     		font-family: $heading-font;
     		font-size: 1.2em;
     		font-weight: bold;
-    		.link-log0{
+    		.link-logo{
     			transition-duration: 1s;
     		}
     		&:hover{

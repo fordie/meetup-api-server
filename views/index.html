@@ -8,7 +8,7 @@
 		<main>
 			<header id="header">
 				<div class="description">
-					<h1>{{group.name}}</h1>
+					<h1>Worthing Who?</h1>
 					{{group.description | safe}}
 				</div>
 				<div class="photos">
@@ -19,15 +19,17 @@
 
 					{% include 'includes/_events.html'%}
 					{% include 'includes/social/_mailchimp.html'%}
-					{% include 'includes/social/_twitter.html'%}
+					{% include 'includes/social/_tweet.html'%}
 					{% include 'includes/supporters/index.html'%}
 
 				</main>
 				<aside>
 					<h2>Get involved</h2>
+					{% include 'includes/social/_meetup.html'%}
+					{% include 'includes/social/_twitter.html'%}
+
 					{% include 'includes/social/_slack.html'%}
 					{% include 'includes/social/_facebook.html'%}
-					{% include 'includes/social/_meetup.html'%}
 					
 				</aside>
 			</div>

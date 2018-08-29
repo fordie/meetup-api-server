@@ -10,6 +10,7 @@ var sassMiddleware = require('node-sass-middleware')
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
+var events = require('./routes/events');
 
 
 // Import the plugin
@@ -49,7 +50,7 @@ nunjucks.configure('views', {
 });
 
 app.use('/', indexRouter);
-//app.use('/users', usersRouter);
+app.use('/events', events);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
