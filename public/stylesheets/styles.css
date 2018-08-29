@@ -6,6 +6,8 @@ body {
 
 a {
   color: #00B7FF; }
+  a:focus {
+    outline: #F04719 auto 5px; }
 
 h1, h2, h3, h4 {
   font-family: "Montserrat", sans-serif; }
@@ -74,6 +76,8 @@ h1, h2, h3, h4 {
       color: #F04719; }
       #contents main summary:hover {
         cursor: pointer; }
+      #contents main summary:focus {
+        outline: #F04719 auto 5px; }
   #contents aside {
     display: grid;
     grid-gap: 20px;
@@ -95,7 +99,7 @@ h1, h2, h3, h4 {
         font-family: "Montserrat", sans-serif;
         font-size: 1.2em;
         font-weight: bold; }
-        #contents aside div a .link-log0 {
+        #contents aside div a .link-logo {
           transition-duration: 1s; }
         #contents aside div a:hover {
           text-decoration: underline; }
