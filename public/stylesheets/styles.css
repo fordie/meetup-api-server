@@ -7,29 +7,41 @@ body {
 a {
   color: #00B7FF; }
 
+h1, h2, h3, h4 {
+  font-family: "Montserrat", sans-serif; }
+
 #contents {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 8fr 2fr; }
   #contents main {
     display: grid;
+    grid-auto-flow: dense;
     grid-gap: 20px;
     grid-template-columns: 3fr 3fr 3fr; }
     #contents main header {
-      grid-column: span 2; }
-    #contents main h2 {
-      grid-column: span 2; }
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      background-color: #efefef;
+      border: 1px solid #ccc;
+      padding: 20px; }
+      #contents main header .description {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2em; }
+      #contents main header .photos {
+        text-align: right; }
     #contents main .tweet {
       border: 1px solid #efefef;
       padding: 20px; }
     #contents main .event a {
       color: #333;
       text-decoration: none; }
-      #contents main .event a h2 {
+      #contents main .event a h3 {
         transition: color 1s ease; }
       #contents main .event a .description {
         display: none; }
-      #contents main .event a:hover h2 {
+      #contents main .event a:hover h3 {
         transition: color 1s ease;
         color: #f13a59; }
       #contents main .event a:hover p {
@@ -42,25 +54,56 @@ a {
       padding: 20px; }
       #contents main .event:first-of-type .description {
         display: block; }
+    #contents main #mailchimp {
+      grid-column: 1 / -1; }
+      #contents main #mailchimp #mc_embed_signup details div {
+        max-width: 50%; }
+        #contents main #mailchimp #mc_embed_signup details div .button {
+          background-color: #F04719; }
+    #contents main h1 {
+      font-size: 3.5em; }
+    #contents main h2, #contents main h3 {
+      font-size: 1.5em; }
+    #contents main > h2 {
+      grid-column: 1 / -1;
+      font-size: 3em; }
+    #contents main summary {
+      font-size: 2em;
+      font-weight: bold;
+      font-family: "Montserrat", sans-serif;
+      color: #F04719; }
+      #contents main summary:hover {
+        cursor: pointer; }
   #contents aside {
     display: grid;
     grid-gap: 20px;
-    grid-template-rows: 300px; }
-    #contents aside div a {
-      display: block;
-      height: 100%;
-      text-align: center;
-      align-self: center;
-      border: 1px solid  #efefef;
-      color: #333;
-      text-decoration: none;
-      font-weight: bold; }
-      #contents aside div a .link-log0 {
-        transition-duration: 1s; }
-      #contents aside div a:hover {
-        text-decoration: underline; }
-        #contents aside div a:hover .link-logo {
-          transform: rotate(-5deg); }
+    grid-template-rows: 6em 300px;
+    padding: 20px;
+    border: 1px solid #efefef; }
+    #contents aside h2 {
+      color: #F04719;
+      font-size: 2.2em; }
+    #contents aside div {
+      max-height: 300px; }
+      #contents aside div a {
+        display: block;
+        height: 100%;
+        text-align: center;
+        align-self: center;
+        color: #333;
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2em;
+        font-weight: bold; }
+        #contents aside div a .link-log0 {
+          transition-duration: 1s; }
+        #contents aside div a:hover {
+          text-decoration: underline; }
+          #contents aside div a:hover .link-logo {
+            transform: rotate(-5deg); }
+
+a.supporter > * {
+  width: 100%; }
 
 .meetupLink {
   background-color: #f13a59;
@@ -76,6 +119,11 @@ a {
     background-color: #e81035; }
 
 footer {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
   margin-top: 20px;
   border-top: 1px solid #ccc;
   line-height: 3; }
+  footer small {
+    text-align: right;
+    line-height: 8; }

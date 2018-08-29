@@ -6,23 +6,33 @@
 	<!--<img src="{{ group.key_photo.photo_link}}" alt="">-->
 	<div id="contents">
 		<main>
-			<header id="header" class="">
-				<h1>{{ group.name }}</h1>
-				
-				{{group.description | safe }}
-				</header><!-- /header -->
-				
-				
-				
-				{% include 'includes/_events.html'%}
-			</main>
-			<aside>
-				{% include 'includes/_slack.html'%}
-				{% include 'includes/_twitter.html'%}
-				{% include 'includes/_facebook.html'%}
-			</aside>
-		</div>
-		<footer>
-			&copy; 2018 WorthingDigital
-		</footer>
-	{% endblock %}
+			<header id="header">
+				<div class="description">
+					<h1>{{group.name}}</h1>
+					{{group.description | safe}}
+				</div>
+				<div class="photos">
+					<img src="images/rachel.jpg" alt="WorthingDigital Talks" height="175px">
+					<img src="images/pub.jpg" alt="WorthingDigital Socials" height="175px">
+				</div>	
+			</header><!-- /header -->
+
+					{% include 'includes/_events.html'%}
+					{% include 'includes/social/_mailchimp.html'%}
+					{% include 'includes/social/_twitter.html'%}
+					{% include 'includes/supporters/index.html'%}
+
+				</main>
+				<aside>
+					<h2>Get involved</h2>
+					{% include 'includes/social/_slack.html'%}
+					{% include 'includes/social/_facebook.html'%}
+					{% include 'includes/social/_meetup.html'%}
+					
+				</aside>
+			</div>
+			<footer>
+				<p>&copy; 2018 WorthingDigital</p>
+				<small>Meetup sponsorship, website development and hosting by Intelligent Lime Ltd</small>
+			</footer>
+		{% endblock %}

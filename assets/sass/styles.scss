@@ -1,6 +1,12 @@
 $primary-color: #333;
 $meetup-color: #f13a59;
 $meetup-hover-color: #e81035;
+$worthingdigital-color: #F04719;
+$light-grey: #efefef;
+$mid-grey: #ccc;
+$white: #fff;
+
+$heading-font: 'Montserrat', sans-serif;
 body {
   padding: 50px;
   background: white;
@@ -11,6 +17,10 @@ body {
 a {
   color: #00B7FF;
 }
+h1, h2, h3, h4{
+	font-family: $heading-font
+}
+
 #contents{
 	display: grid;
 	grid-gap: 20px;
@@ -18,31 +28,44 @@ a {
 
 	main{
 		display: grid;
+		grid-auto-flow: dense;
 		grid-gap: 20px;
 		grid-template-columns: 3fr 3fr 3fr;
 
 		header{
-			grid-column: span 2;
+			grid-column: 1 / -1;
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			background-color: $light-grey;
+			border: 1px solid $mid-grey;
+			padding: 20px;
+			.description {
+				font-family: $heading-font;
+				font-size: 1.2em;
+			}
+			.photos{
+				text-align:right;
+			}
 		}
-		h2 {
-			grid-column: span 2;
-		}
+		
 		.tweet{
-			border: 1px solid #efefef;
+			border: 1px solid $light-grey;
 			padding: 20px
 		}
 		.event{
+
 			a{
 				color: $primary-color;
 				text-decoration:none;
-				h2{
+
+				h3{
 					transition: color 1s ease;
 				}
 				.description{
 					display: none
 				}
 			&:hover {
-					h2{
+					h3{
 						transition: color 1s ease;
 						color:$meetup-color;
 					}
@@ -52,32 +75,72 @@ a {
 				}
 			}
 
+
 		}
 		.event:first-of-type{
 			grid-column: span 2;
 			grid-row: span 2;
-			background-color: #efefef;
-			border: 1px solid #ccc;
+			background-color: $light-grey;
+			border: 1px solid $mid-grey;
 			padding: 20px;
 			
 			.description{
 				display:block;
 			}
 		}
+		#mailchimp{
+			grid-column: 1 / -1;
+			#mc_embed_signup details div{
+				max-width: 50%;
+				.button {
+				background-color: $worthingdigital-color;
+			}
+			}
+		}
+		h1{
+			font-size: 3.5em
+		}
+		h2, h3{
+			font-size: 1.5em;
+		}
+		> h2{
+				grid-column: 1 / -1;
+				font-size: 3em;
+			}
+		summary{
+			font-size: 2em;
+			font-weight: bold;
+			font-family: $heading-font;
+			color: $worthingdigital-color;
+			&:hover{
+				cursor: pointer;
+			}
+		}
 	}
 	aside{
 		display: grid;
 		grid-gap: 20px;
-		grid-template-rows: 300px;
+		grid-template-rows: 6em 300px;
+		padding: 20px;
+		border: 1px solid $light-grey;
 
-		div a{
+		h2{
+			color: $worthingdigital-color;
+			font-size: 2.2em
+		}
+
+		div {
+			max-height: 300px;
+
+			a{
 			display: block;
 			height: 100%;
 			text-align: center;
     		align-self: center;
-    		border: 1px solid  #efefef;
     		color: $primary-color;
     		text-decoration: none;
+    		font-family: $heading-font;
+    		font-size: 1.2em;
     		font-weight: bold;
     		.link-log0{
     			transition-duration: 1s;
@@ -92,11 +155,16 @@ a {
     			}
     		}
 		}
+		}
 	}
+}
+
+a.supporter > * {
+	width:100%;
 }
 .meetupLink{
 	background-color: $meetup-color;
-	color: #fff;
+	color: $white;
 	border-radius: 3px;
 	text-align: center;
 	align-self: center;
@@ -111,7 +179,14 @@ a {
 }
 
 footer{
+	grid-template-columns: 1fr 1fr;
+	display: grid;
 	margin-top: 20px;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid $mid-grey;
 	line-height: 3;
+
+	small{
+		text-align: right;
+		line-height:8
+	}
 }
