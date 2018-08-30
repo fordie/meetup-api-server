@@ -52,7 +52,14 @@ h1, h2, h3, h4{
 				text-align:right;
 			}
 		}
-		
+		section{
+			grid-column: 1 / -1;
+			display: grid;
+			grid-auto-flow: dense;
+			grid-gap: 20px;
+			grid-template-columns: 3fr 3fr 3fr;
+			align-items: center;
+		}
 		.tweet{
 			border: 1px solid $light-grey;
 			padding: 20px
@@ -95,6 +102,9 @@ h1, h2, h3, h4{
 		}
 		#mailchimp{
 			grid-column: 1 / -1;
+			#mc_embed_signup form{
+				padding: 0;
+			}
 			#mc_embed_signup details div{
 				max-width: 50%;
 				.button {
@@ -108,10 +118,13 @@ h1, h2, h3, h4{
 		h2, h3{
 			font-size: 1.5em;
 		}
-		> h2{
+		h2{
 				grid-column: 1 / -1;
 				font-size: 3em;
 			}
+		h2.events{
+			grid-column: span 2;
+		}
 		summary{
 			font-size: 2em;
 			font-weight: bold;
@@ -122,6 +135,33 @@ h1, h2, h3, h4{
 			}
 			&:focus{
 				outline: $worthingdigital-color auto 5px;
+			}
+		}
+		.sponsor{
+			color: $primary-color;
+			text-decoration: none;
+			position: relative;
+			&.gold{
+				grid-column: span 2;
+			}
+			&.dark{
+				background-color:#888;
+			}
+			img{
+				max-width: 100%;
+			}
+			.blurb{
+				display:none;
+			}
+			&:focus, &:hover{
+				.blurb{
+					display:block;
+					position: absolute;
+					bottom:0;
+					left:0;
+					background-color: rgba(255, 255, 255, 0.8);
+					width: 100%;
+				}
 			}
 		}
 	}
