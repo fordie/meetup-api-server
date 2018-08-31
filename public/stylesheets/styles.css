@@ -5,6 +5,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   max-width: 1300px;
   margin: auto; }
+  body > header {
+    margin-bottom: 2em; }
 
 a {
   color: #00B7FF; }
@@ -164,7 +166,7 @@ footer {
     text-align: right;
     line-height: 8; }
 
-@media only screen and (min-device-width: 1px) and (max-device-width: 1024px) {
+@media only screen and (max-device-width: 1024px), only screen and (max-width: 900px) {
   #contents {
     grid-template-columns: 1fr; }
     #contents main {
