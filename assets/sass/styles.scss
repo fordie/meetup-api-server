@@ -238,3 +238,42 @@ footer{
 		line-height:8
 	}
 }
+
+@media only screen and (min-device-width : 1px) and (max-device-width : 1024px){
+	#contents{
+	grid-template-columns: 1fr;
+	main{
+		grid-template-columns: 1fr 1fr;
+		section{
+			grid-template-columns: 1fr 1fr;
+		}
+		.meetupLink{
+				grid-column: span 2;
+			}
+		#mailchimp #mc_embed_signup details div{
+			width: 100%;
+		}
+
+	}
+	aside{
+		display: grid;
+		grid-gap: 20px;
+		grid-template-rows: 6em 500px;
+		grid-template-columns: 1fr 1fr;
+		h2{
+			grid-column: span 2;
+		}
+		div{
+			max-height:500px;
+		}
+	}
+}
+footer{
+	grid-template-columns: 1fr;
+	line-height: 1.2;
+	small {
+		line-height: 1.2;
+		text-align: left;
+	}
+}
+}
