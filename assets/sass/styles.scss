@@ -108,6 +108,18 @@ h1, h2, h3, h4{
 			grid-column: 1 / -1;
 			padding: 20px;
 			background-color: #efefef;
+			position: relative;
+			h3::before{
+				content: 'Special Event';
+				display: block;
+				background-color: $worthingdigital-color;
+				padding: 10px;
+				position: absolute;
+				top: -5px;
+				left: -10px;
+				color: $white;
+				font-size: 0.8em;
+			}
 		}
 		#mailchimp{
 			grid-column: 1 / -1;

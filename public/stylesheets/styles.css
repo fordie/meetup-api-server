@@ -71,7 +71,18 @@ h1, h2, h3, h4 {
       border: 1px solid #F04719;
       grid-column: 1 / -1;
       padding: 20px;
-      background-color: #efefef; }
+      background-color: #efefef;
+      position: relative; }
+      #contents main .event.special h3::before {
+        content: 'Special Event';
+        display: block;
+        background-color: #F04719;
+        padding: 10px;
+        position: absolute;
+        top: -5px;
+        left: -10px;
+        color: #fff;
+        font-size: 0.8em; }
     #contents main #mailchimp {
       grid-column: 1 / -1; }
       #contents main #mailchimp #mc_embed_signup form {
