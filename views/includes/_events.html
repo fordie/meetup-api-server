@@ -2,7 +2,7 @@
 <a href="https://www.meetup.com/WorthingDigital/" class="meetupLink">Never miss an event <br /> join our {{ group.members }} members on meetup</a>
 {% for event in events%}
 	{% if event.announced %}
-	<div class="event">
+	<div class="event {% if(event.name =='The End of Digital')%}special{% endif %}">
 		<a href="{{ event.event_url}}" title="{{event.name}}, {{event.time | date }} ">
 			<h3>{{event.name}}</h3>
 			<p>{{event.venue.name}}, {{event.venue.address_1}}</p>

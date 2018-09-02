@@ -67,6 +67,11 @@ h1, h2, h3, h4 {
       padding: 20px; }
       #contents main .event:first-of-type .description {
         display: block; }
+    #contents main .event.special {
+      border: 1px solid #F04719;
+      grid-column: 1 / -1;
+      padding: 20px;
+      background-color: #efefef; }
     #contents main #mailchimp {
       grid-column: 1 / -1; }
       #contents main #mailchimp #mc_embed_signup form {
