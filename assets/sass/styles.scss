@@ -103,6 +103,12 @@ h1, h2, h3, h4{
 				display:block;
 			}
 		}
+		.event.special{
+			border: 1px solid $worthingdigital-color;
+			grid-column: 1 / -1;
+			padding: 20px;
+			background-color: #efefef;
+		}
 		#mailchimp{
 			grid-column: 1 / -1;
 			#mc_embed_signup form{
