@@ -7,8 +7,19 @@
 			<h3>{{event.name}}</h3>
 			<p>{{event.venue.name}}, {{event.venue.address_1}}</p>
 			<p>{{event.time | date }}</p>
-			<div class="description">{{event.description | safe }}</div>
+			<div class="description">
+			{% if (event.photo_url)%}
+				<img src="{{event.photo_url}}" alt="event photo" />
+			{% endif %}
+			{{event.description | safe }}</div>
 		</a>
 	</div>
 	{% endif %}
 {% endfor %}
+<div class="pastEvents">
+	<h3>Past events</h3>
+	<ul>
+		<li><a href="https://www.youtube.com/user/WorthingDigital">See past talks on YouTube</a></li>
+		<li><a href="https://www.meetup.com/WorthingDigital/events/past/">See what we've done on Meetup.com</a></li>
+	</ul>
+</div>
