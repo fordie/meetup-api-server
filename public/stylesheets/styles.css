@@ -83,6 +83,17 @@ h1, h2, h3, h4 {
         left: -10px;
         color: #fff;
         font-size: 0.8em; }
+    #contents main .pastEvents {
+      background-color: #efefef;
+      border: 1px solid #ccc;
+      padding: 20px; }
+      #contents main .pastEvents ul {
+        list-style-type: none;
+        padding: 0; }
+        #contents main .pastEvents ul li {
+          margin-bottom: 1em; }
+        #contents main .pastEvents ul a {
+          color: #333; }
     #contents main #mailchimp {
       grid-column: 1 / -1; }
       #contents main #mailchimp #mc_embed_signup form {
@@ -133,7 +144,8 @@ h1, h2, h3, h4 {
     grid-gap: 20px;
     grid-template-rows: 6em 300px;
     padding: 20px;
-    border: 1px solid #efefef; }
+    border: 1px solid #efefef;
+    min-width: 235px; }
     #contents aside h2 {
       color: #F04719;
       font-size: 2.2em; }
