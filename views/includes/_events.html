@@ -7,11 +7,14 @@
 			<h3>{{event.name}}</h3>
 			<p>{{event.venue.name}}, {{event.venue.address_1}}</p>
 			<p>{{event.time | date }}</p>
+			{% if(loop.index == 1) or (event.name =='The End of Digital') %}
 			<div class="description">
 			{% if (event.photo_url)%}
 				<img src="{{event.photo_url}}" alt="event photo" />
 			{% endif %}
-			{{event.description | safe }}</div>
+			{{event.description | safe }}
+		</div>
+		{% endif %}
 		</a>
 	</div>
 	{% endif %}
