@@ -126,8 +126,6 @@ h1, h2, h3, h4 {
       position: relative; }
       #contents main .sponsor.gold {
         grid-column: span 2; }
-      #contents main .sponsor.dark {
-        background-color: #888; }
       #contents main .sponsor img {
         max-width: 100%; }
       #contents main .sponsor .blurb {
@@ -139,6 +137,8 @@ h1, h2, h3, h4 {
         left: 0;
         background-color: rgba(255, 255, 255, 0.8);
         width: 100%; }
+    #contents main .dark {
+      background-color: #888; }
   #contents aside {
     display: grid;
     grid-gap: 20px;
