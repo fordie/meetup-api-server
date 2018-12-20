@@ -7,6 +7,13 @@ var meetup = require('meetup-api')({
 
 router.get('/', indexRoute);
 
+router.get('/team', function(req, res, next) {
+	res.render('team')
+});
+router.get('/theendofdigital', function(req, res, next) {
+	res.render('theEndofDigital')
+});
+
 module.exports = router;
 
 function indexRoute(req, res, next) {

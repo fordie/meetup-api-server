@@ -5,12 +5,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var express = require('express');
 var sassMiddleware = require('node-sass-middleware')
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
-var events = require('./routes/events');
 
 
 // Import the plugin
@@ -19,8 +17,8 @@ var nunjucksDate = require('nunjucks-date');
 // Define a custom default date format. Any valid format works.
 // The date format defaults to "YYYY"
 // http://momentjs.com/docs/#/displaying/format/
-//nunjucksDate.setDefaultFormat('MMMM Do YYYY, h:mm:ss a');
-nunjucksDate.setDefaultFormat('MMMM Do YYYY');
+nunjucksDate.setDefaultFormat('MMMM Do YYYY, h:mm:ss a');
+//nunjucksDate.setDefaultFormat('MMMM Do YYYY');
  
 // Initialize your Nunjucks enironment
 var env = new nunjucks.Environment();
@@ -51,7 +49,7 @@ nunjucks.configure('views', {
 });
 
 app.use('/', indexRouter);
-app.use('/events', events);
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -64,12 +62,34 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
+});
 
 env.express(app);
 

@@ -1,0 +1,27 @@
+{% extends 'layout/default.html' %}
+{% block content %}
+		{% include 'includes/_header.html'%}
+
+	<!--<img src="{{ group.key_photo.photo_link}}" alt="">-->
+	<div id="contents">
+		<main>
+			banana
+			<h1>The end of digital</h1>
+			<p>On October 4th 2018 WorthingDigital is proud to present "The end of digital" with Applied Futurist Tom Cheesewright.</p>
+
+			
+
+		</main>
+		<aside>
+			<h2>Get involved</h2>
+			{% include 'includes/social/_slack.html'%}
+			{% include 'includes/social/_facebook.html'%}
+			{% include 'includes/social/_meetup.html'%}
+			
+		</aside>
+	</div>
+	<footer>
+		<p>&copy; 2018 WorthingDigital</p>
+		<small>Meetup sponsorship, website development and hosting by Intelligent Lime Ltd</small>
+	</footer>
+{% endblock %}
