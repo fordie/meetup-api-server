@@ -4,18 +4,81 @@
 	<!--<img src="{{ group.key_photo.photo_link}}" alt="">-->
 	<div id="contents">
 		<main>
-			<h1>Team</h1>
+			<header id="header" class="">
+				<h1>Meet the Committee</h1>
+				<div>
+					&nbsp;
+				</div>
+				<p>WorthingDigital is run by its members for its members. Meet the people that make the magic happen</p>
+			</header><!-- /header -->
+			<div class="team founder">
+				<h2 class="memberName"><a href="https://twitter.com/fordie" targert="_blank">Mark Ford</a></h2>
+				<p>Mark has been running events in Worthing for digital types since 2009. In 2012 Mark Founded WorthingDigital, and the rest, as they say is history.</p>
+				<p>Mark has founded <a href="https://sussex.digital">SussexDigital</a> to help people in other towns across the county replicate the success that WorthingDigital has enjoyed.</p>
+				<p>By day Mark is a web development consultant, with a  string of high profile clients to his name.</p>		
+			</div>
 
+			<div class="team committee">
+				<h2 class="memberName"><a href="https://twitter.com/crashposition" targert="_blank">John Dalziel</a></h2>
+				<p>
+				 John is a WorthingDigital organiser and lifelong technophile. 
+			</p>
+			<p>
+				He was active in the Atari demoscene and as an Indie Developer in the early UK video games industry. John specialises in building and running robust web applications on AWS and loves helping businesses do more with the modern web.
+				</p>
+			</div>
+			
+			<div class="team committee">
+				<h2 class="memberName"><a href="https://twitter.com/shakeitcreative">Meg Fenn</a></h2>
+				<p>
+					Meg is the director of Shake It Up Creative, a design and marketing company specialising in rebranding and repositioning. We love working with people who are ready to take their business to the next level, value design and marketing and need some professional help to turn their ambitions and their passions into reality. Our aim is to help organisations find and communicate their purpose through design and marketing. 
+				</p>
+				<p>
+				Meg also runs training workshops, speaks at various conferences mainly on design and business, participates in various local and national business and digital events and is a mum of three.</p>
+			</div>
+			<div class="team committee">
+				<h2 class="memberName">Simon Collyer</h2>
+				<p>
+				Simon is an international man of mystery and ASP.NET developer with 20+ years of experience in bespoke web development, building everything from content management systems to job boards to middleware for API integrations.</p> 
+				<p>
+				He escaped from the big smoke of London to Worthing nine years ago, and has been running his own business for seven. He credits co-working with saving his sanity during that time; working from home is great but remote working cannot (yet) provide a replacement for the face-to-face contact which is a critical part of a good working environment.</p>
+			</div>
+			<div class="team committee">
+			<h2 class="memberName"><a href="https://twitter.com/southcoastdavid" targert="_blank">David Somerville</a></h2>
+			<p>
+			 After studying for a Behavioural Sciences degree, David began his career in marketing, working for the Kent and Sussex Courier newspaper as a sales and marketing executive. He then moved to the Friday Media Group in a marketing executive role. His 14 year stint within the business saw him in several roles, including running the online content team and heading up the Group’s social media strategy.
+			</p>	
+			<p>
+			In 2012 David made the move from client-side to agency and joined Fresh Egg as a senior social media strategist. He worked on a number of key customer accounts before being promoted to head of social media in 2013, then head of content and social media in 2014.</p>
+			<p>
+			David’s current role as strategy director at Fresh Egg sees him helping clients drive their overall digital marketing strategies.
+			</p>
+			<p>
+			He has spoken at a number of marketing conferences, plus blogs for the likes of Econsultancy and Smart Insights. In 2018 David was nominated for several marketing awards and won at the Drum Search Awards and the Wirehive Awards.</p>
+			</div>
+			<div class="team committee">
+				<h2 class="memberName"><a href="https://twitter.com/kings13y" targert="_blank">Kingsley Davies</a></h2>
+				<p>Kingsley is a Partner at Underscore consulting, and has spent nearly two decades designing, developing and supporting large scale systems for a number of clients including, Betfair, the BBC, Barclaycard and others that don't start with a B ;-)</p>
+				<p>While working to make things better, he’s seen a steady evolution towards functional programming, a sharper focus on development operation teams and tools and decomposing big things into smaller composable things commonly called services.</p>
+				<p>Most recently he's also dived into the ethical tech and tech for good pools and is keen to encourage and support initiatives in these areas.</p>
+
+
+
+			</div>
+			<!--
+			<div class="team advisor">
+				<p>
+				Janna Bastow is co-founder of ProdPad, product management and roadmapping software for product people. Janna is also co-founder of ProductTank and Mind the Product, a global community of product managers. She often starts and stops conversations with the question: “What problem are you trying to solve?”</p>
+			</div>
+			<div class="team advisor">
+				
+			</div>
+			<div class="team advisor">
+				
+			</div>
+			-->
 				</main>
-				<aside>
-					<h2>Get involved</h2>
-					{% include 'includes/social/_meetup.html'%}
-					{% include 'includes/social/_twitter.html'%}
-
-					{% include 'includes/social/_slack.html'%}
-					{% include 'includes/social/_facebook.html'%}
-					
-				</aside>
+				{% include 'includes/aside.html'%}
 			</div>
 			<footer>
 				<p>&copy; 2018 WorthingDigital</p>

@@ -12,6 +12,7 @@ body {
   background: white;
   color: $primary-color;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   max-width: 1300px;
   margin: auto;
   > header {
@@ -27,6 +28,7 @@ a {
 }
 h1, h2, h3, h4{
 	font-family: $heading-font
+	line-height: 1;
 }
 
 #contents{
@@ -242,6 +244,21 @@ h1, h2, h3, h4{
 		}
 		}
 	}
+
+	.team{
+		grid-column: 1 / -1;
+		border-bottom: 1px solid $mid-grey;
+		h2.memberName{
+			text-transform: uppercase;
+			display: inline !important;
+			font-size: 2em;
+
+			a{
+				color: $primary-color;
+			}
+		}
+	}
+
 }
 
 a.supporter > * {
