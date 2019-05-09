@@ -8,6 +8,7 @@
 				<div class="description">
 					<h1>Worthing Who?</h1>
 					{{group.description | safe}}
+					Meet the <a href="/team">committee</a> behind WorthingDigital
 				</div>
 				<div class="photos">
 					<img src="images/rachel.jpg" alt="WorthingDigital Talks" height="175">
@@ -21,15 +22,7 @@
 					{% include 'includes/supporters/index.html'%}
 
 				</main>
-				<aside>
-					<h2>Get involved</h2>
-					{% include 'includes/social/_meetup.html'%}
-					{% include 'includes/social/_twitter.html'%}
-
-					{% include 'includes/social/_slack.html'%}
-					{% include 'includes/social/_facebook.html'%}
-					
-				</aside>
+					{% include 'includes/aside.html'%}
 			</div>
 			<footer>
 				<p>&copy; 2018 WorthingDigital</p>

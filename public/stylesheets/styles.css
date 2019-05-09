@@ -3,6 +3,7 @@ body {
   background: white;
   color: #333;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
   max-width: 1300px;
   margin: auto; }
   body > header {
@@ -167,6 +168,13 @@ h1, h2, h3, h4 {
           text-decoration: underline; }
           #contents aside div a:hover .link-logo {
             transform: rotate(-5deg); }
+  #contents .team {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid #ccc; }
+    #contents .team .memberName {
+      text-transform: uppercase; }
+      #contents .team .memberName a {
+        color: #333; }
 
 a.supporter > * {
   width: 100%; }
