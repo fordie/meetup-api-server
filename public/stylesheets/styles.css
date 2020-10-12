@@ -3,7 +3,7 @@ body {
   background: white;
   color: #333;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
   max-width: 1300px;
   margin: auto; }
   body > header {
@@ -15,7 +15,8 @@ a {
     outline: #F04719 auto 5px; }
 
 h1, h2, h3, h4 {
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Montserrat", sans-serif;
+  line-height: 1; }
 
 #contents {
   display: grid;
@@ -38,6 +39,15 @@ h1, h2, h3, h4 {
         font-size: 1.2em; }
       #contents main header .photos {
         text-align: right; }
+    #contents main article {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2em; }
     #contents main section {
       grid-column: 1 / -1;
       display: grid;
@@ -171,9 +181,11 @@ h1, h2, h3, h4 {
   #contents .team {
     grid-column: 1 / -1;
     border-bottom: 1px solid #ccc; }
-    #contents .team .memberName {
-      text-transform: uppercase; }
-      #contents .team .memberName a {
+    #contents .team h2.memberName {
+      text-transform: uppercase;
+      display: inline !important;
+      font-size: 2em; }
+      #contents .team h2.memberName a {
         color: #333; }
 
 a.supporter > * {

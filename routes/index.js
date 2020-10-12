@@ -7,8 +7,8 @@ router.get('/', function(req, res){
 	res.render('index.html')
 });
 
-router.get('/team', function(req, res, next) {
-	res.render('team')
+router.get('/get-online-week', function(req, res, next) {
+	res.render('events')
 });
 router.get('/theendofdigital', function(req, res, next) {
 	res.render('theEndofDigital')

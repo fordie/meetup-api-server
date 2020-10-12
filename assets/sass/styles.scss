@@ -27,7 +27,7 @@ a {
 			}
 }
 h1, h2, h3, h4{
-	font-family: $heading-font
+	font-family: $heading-font;
 	line-height: 1;
 }
 
@@ -57,6 +57,16 @@ h1, h2, h3, h4{
 				text-align:right;
 			}
 		}
+		article{
+			grid-column: 1 / -1;
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			border: 1px solid $mid-grey;
+			padding: 20px;
+			margin-bottom: 20px;
+			font-family: $heading-font;
+			font-size: 1.2em;
+			}
 		section{
 			grid-column: 1 / -1;
 			display: grid;
